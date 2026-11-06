@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    user-select: none;
+    -webkit-user-select: none;
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+
+  #root {
+    min-height: 100vh;
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+  
+  input, textarea {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Cards */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(209, 250, 229, 0.8);
+    box-shadow: 0 8px 32px -4px rgba(16, 185, 129, 0.15);
+  }
+
+  .dark .glass-card {
+    background: rgba(6, 78, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Dynamic Interactive Cards */
+  .interactive-card {
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .interactive-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -4px rgba(16, 185, 129, 0.16);
+    border-color: rgba(16, 185, 129, 0.4);
+  }
+
+  .interactive-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Emerald Gradient Text */
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #10B981 0%, #14B8A6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+/* Shimmer Animation */
+.shimmer-effect {
+  background: linear-gradient(90deg, #f0fdf4 0%, #d1fae5 50%, #f0fdf4 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+.dark .shimmer-effect {
+  background: linear-gradient(90deg, #064e3b 0%, #065f46 50%, #064e3b 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* Safe Area Insets for Mobile PWA */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 16px);
+}
+

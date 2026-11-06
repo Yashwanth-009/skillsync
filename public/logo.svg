@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="ssBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="45%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="ssGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Mortarboard Cap Gradient -->
+    <linearGradient id="ssCap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="ssGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="ssShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#064e3b" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Container -->
+  <rect x="4" y="4" width="112" height="112" rx="32" fill="url(#ssBg)"/>
+  <rect x="4" y="4" width="112" height="112" rx="32" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="2"/>
+
+  <!-- Outer Dynamic Sync Orbit Ring -->
+  <circle cx="60" cy="62" r="38" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="4" stroke-dasharray="8 6"/>
+  
+  <!-- Interlocking Sync Wave Ribbon (Left Arc to Right Arc) -->
+  <path d="M 28 64 C 28 44 44 38 60 48 C 76 58 92 52 92 36" fill="none" stroke="url(#ssGlow)" stroke-width="4.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 92 60 C 92 80 76 86 60 76 C 44 66 28 72 28 88" fill="none" stroke="url(#ssGlow)" stroke-width="4.5" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Academic Mortarboard Graduation Cap -->
+  <g filter="url(#ssShadow)">
+    <!-- Diamond Top of Cap -->
+    <polygon points="60,28 92,42 60,56 28,42" fill="url(#ssCap)"/>
+    
+    <!-- Cap Skull Cap Underneath -->
+    <path d="M 44 49 L 44 63 C 44 71 76 71 76 63 L 76 49 Z" fill="#f1f5f9" opacity="0.95"/>
+
+    <!-- Tassel Button & Cord -->
+    <circle cx="60" cy="42" r="3.2" fill="url(#ssGold)"/>
+    <path d="M 60 42 Q 78 44 82 58" fill="none" stroke="url(#ssGold)" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="82" cy="59" r="2.2" fill="url(#ssGold)"/>
+  </g>
+
+  <!-- Open Academic Book / Knowledge Wings at Base -->
+  <g filter="url(#ssShadow)" transform="translate(0, 10)">
+    <!-- Left Page -->
+    <path d="M 32 76 C 42 72 52 74 60 78 L 60 91 C 52 87 42 85 32 89 Z" fill="#ffffff" opacity="0.95"/>
+    <!-- Right Page -->
+    <path d="M 88 76 C 78 72 68 74 60 78 L 60 91 C 68 87 78 85 88 89 Z" fill="#e2e8f0" opacity="0.95"/>
+    <!-- Center Spine Divider -->
+    <line x1="60" y1="78" x2="60" y2="92" stroke="#059669" stroke-width="1.5"/>
+  </g>
+
+  <!-- AI Intelligence Star Sparkle -->
+  <g transform="translate(86, 22)">
+    <path d="M 0,-8 Q 0,0 8,0 Q 0,0 0,8 Q 0,0 -8,0 Q 0,0 0,-8 Z" fill="url(#ssGold)"/>
+    <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
+  </g>
+</svg>
